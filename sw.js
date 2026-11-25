@@ -1,7 +1,7 @@
 // Service worker do PVCraft Scanner. Gerado no build (vite.config.ts) a partir deste modelo.
 // Guarda todos os arquivos do app na instalação e responde do cache: o app abre sem internet.
-const CACHE = "pvcraft-782a9f2af86a";
-const FILES = ["./","./assets/PdfEditor-CmplfdY-.js","./assets/index-B8WuREnf.js","./assets/index-CMkmbHUb.css","./assets/pdf.worker.min-rsCePomN.mjs","./assets/worker-zNqMKAm5.js","./fonts/Manrope-Variable.ttf","./icons/apple-touch-icon.png","./icons/favicon-48.png","./icons/icon-192.png","./icons/icon-512.png","./icons/simbolo.svg","./index.html","./manifest.webmanifest"];
+const CACHE = "pvcraft-8c9db3fc5cf1";
+const FILES = ["./","./assets/PdfEditor-C6rNqj80.js","./assets/index-C2OD3UT9.css","./assets/index-C3GV7EdP.js","./assets/ocr-Du1IFPgx.js","./assets/pdf.worker.min-rsCePomN.mjs","./assets/scanlook-DIjM21Ru.js","./assets/worker-zNqMKAm5.js","./fonts/Manrope-Variable.ttf","./icons/apple-touch-icon.png","./icons/favicon-48.png","./icons/icon-192.png","./icons/icon-512.png","./icons/simbolo.svg","./index.html","./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -34,8 +34,9 @@ self.addEventListener("fetch", (event) => {
       if (hit) return hit;
       try {
         const response = await fetch(request);
-        // as fontes de substituição do editor de PDF ficam guardadas depois do primeiro uso
-        if (response.ok && new URL(request.url).pathname.includes("/fontes-pdf/")) void cache.put(request, response.clone());
+        // as fontes de substituição do editor de PDF e o reconhecedor de texto ficam guardados
+        // depois do primeiro uso
+        if (response.ok && /\/(fontes-pdf|ocr)\//.test(new URL(request.url).pathname)) void cache.put(request, response.clone());
         return response;
       } catch (error) {
         // sem internet: qualquer navegação cai na página do app
