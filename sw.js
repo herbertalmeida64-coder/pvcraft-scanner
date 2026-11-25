@@ -1,7 +1,7 @@
 // Service worker do PVCraft Scanner. Gerado no build (vite.config.ts) a partir deste modelo.
 // Guarda todos os arquivos do app na instalação e responde do cache: o app abre sem internet.
-const CACHE = "pvcraft-db9ea206cb79";
-const FILES = ["./","./assets/PdfEditor-Ds9X5nhi.js","./assets/index-CMkmbHUb.css","./assets/index-CZIYMMqF.js","./assets/pdf.worker.min-rsCePomN.mjs","./assets/worker-zNqMKAm5.js","./fonts/Manrope-Variable.ttf","./icons/apple-touch-icon.png","./icons/favicon-48.png","./icons/icon-192.png","./icons/icon-512.png","./icons/simbolo.svg","./index.html","./manifest.webmanifest"];
+const CACHE = "pvcraft-782a9f2af86a";
+const FILES = ["./","./assets/PdfEditor-CmplfdY-.js","./assets/index-B8WuREnf.js","./assets/index-CMkmbHUb.css","./assets/pdf.worker.min-rsCePomN.mjs","./assets/worker-zNqMKAm5.js","./fonts/Manrope-Variable.ttf","./icons/apple-touch-icon.png","./icons/favicon-48.png","./icons/icon-192.png","./icons/icon-512.png","./icons/simbolo.svg","./index.html","./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
