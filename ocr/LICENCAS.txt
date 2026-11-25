@@ -1,3 +1,5 @@
 Reconhecimento de texto (OCR): Tesseract.js e tesseract.js-core, licença Apache-2.0
 https://github.com/naptha/tesseract.js
-Dados do idioma português: tessdata (Apache-2.0), https://github.com/tesseract-ocr/tessdata_best
+Dados dos idiomas (arquivos .traineddata.gz): tessdata do projeto Tesseract (Apache-2.0),
+https://github.com/tesseract-ocr/tessdata_best, na forma publicada nos pacotes @tesseract.js-data
+(https://github.com/naptha/tessdata).
